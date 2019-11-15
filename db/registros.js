@@ -13,7 +13,6 @@ function getAll() {
 }
  
 function create(registro) {
- 
     const result = Joi.validate(registro, schema);
     if (result.error == null) {
         return registros.insert(registro);
