@@ -1,0 +1,19 @@
+pipeline {
+  agent any
+    
+  tools {nodejs "node"}
+    
+  stages {
+        
+    stage('Cloning Git') {
+      steps {
+        git branch: 'develop', url:'https://github.com/gobs84/WIT-BE'
+      }
+    }
+    stage('Install dependencies') {
+      steps {
+        bat 'npm install'
+      }
+    }
+  }
+}
